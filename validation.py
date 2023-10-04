@@ -9,8 +9,7 @@ def validate_user_input():
     while True:
         user_input = input('Please enter a number: ')
         try:
-            number = int(user_input)
-            return number
+            return int(user_input)
         except ValueError:
             print('You did not enter a valid number, please try again')
 
@@ -30,10 +29,10 @@ print(f'The number the user entered is {user_number}.')
 # - if there are not ten items in the list, tell the user that it is not applicable: 'N/A'
 
 def print_tenth_item(top_ten):
-    if len(top_ten) >= 10:
+    try:
         item = top_ten[9]  # Note that the 10th item is at index 9 (0-based index)
-        print(f"The 10th item in the list is: {item}")
-    else:
+        print(item)
+    except:
         print("N/A")
 # NOTE: What type of error does python throw if you try to index into a list past the number of items in it?
 # Test it out (or google it!) to see which one. Specifically catch that exception in your code.
